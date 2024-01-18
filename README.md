@@ -4,32 +4,56 @@ first we created dependencies :
 1. spring web
 2. spring boot Devtool
 3. h2 : for dgl
+4. jpa : for data base
 
 
-if you use annotation it means you  add all its local annotations 
-for example:
-instead of addinf @Component and below that @controller
-you can have only @controller 
+************************************************************************************************************************
+
+**annotations Hint**
+
+
+
+* if you use annotation it means you  add all its local annotations 
+
+
+* instead of adding **@Component** and below that **@controller**
+you can have only **@controller** 
 because
-in @controller annotation class @controller have @component and by just adding @controller you add its pre-defined
+in **@controller** annotation class @controller have **@component** and by just adding **@controller** you add its pre-defined
 annotation like @Component
 
-another example:
-**@RestController** is annotaion and if you open that by ctrl+click you see these annotations
-
-* @Target(ElementType.TYPE)
-* @Retention(RetentionPolicy.RUNTIME)
-* @Documented
-* @Controller
-* @ResponseBody
-
-of curse, we don't see @Component but in last example we said **@Controller** has **@component** so
-by declaring **@RestController** we have its local annotation and ANNOTATION OF ITS LOCAL ANONOTION
 
 
 
+* **@RestController** is annotation and if you open that by ctrl+click you see these annotations
+
+@Target(ElementType.TYPE)  
+@Retention(RetentionPolicy.RUNTIME)  
+@Documented   
+@Controller   
+@ResponseBody     
+
+* of curse, we don't see @Component but in last example we said **@Controller** has **@component** so
+by declaring **@RestController** we have its local annotation and ANNOTATION OF ITS LOCAL ANNOTATIONS
 
 
+
+
+
+* @RequestMapping(value = "/e",method = RequestMethod.GET) is annotation that is used to have Get operation in bakend
+  value = "/(your defined path)" , method = RequestMethod.GET / POST / DELETE / HEAD / PUT / ...
+for having GET you can use 
+@GetMapping"/(your defined path)" == @RequestMapping(value = "/e",method = RequestMethod.GET)
+@PostMapping"/(your defined path)" == @RequestMapping(value = "/e",method = RequestMethod.POSt)
+...
+
+
+
+
+
+
+
+************************************************************************************************************************
 i had error in my pom.xml file with
 
     <build>
