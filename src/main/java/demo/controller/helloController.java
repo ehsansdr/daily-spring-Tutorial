@@ -1,4 +1,4 @@
-package demo;
+package demo.controller;
 //if you press ctrl + alt + O : it removes all unused imports
 
 import org.springframework.web.bind.annotation.GetMapping;
