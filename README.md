@@ -1,12 +1,20 @@
 **here we have my journey of learning Spring boot**
 
+_after adding by copy pasting press maven icon on top right of pom.xml file to download that_
+
+
 first we created dependencies :
+
 1. spring web
 2. spring boot Devtool
-3. h2 : for dgl
-4. jpa : for data base
+3. h2                    : for dgl
+4. jpa                   : for data base  (instal plugin : Jakarta EE: Persistence ​(JPA))
 
 
+************************************************************************************************************************
+use this in application.properties ti change th port:
+
+    server.port = 800 
 ************************************************************************************************************************
 
 **annotations Hint**
@@ -45,15 +53,22 @@ by declaring **@RestController** we have its local annotation and ANNOTATION OF 
 for having GET you can use 
 @GetMapping"/(your defined path)" == @RequestMapping(value = "/e",method = RequestMethod.GET)
 @PostMapping"/(your defined path)" == @RequestMapping(value = "/e",method = RequestMethod.POSt)
-...
+...    
 
 
-
-
+**@Component**   
+//if you want to have this class as component have this annotation
+be careful if you want to scan this by special class add **@ComponentScan** to that class
 
 
 
 ************************************************************************************************************************
+
+**problem solution**
+
+
+
+
 i had error in my pom.xml file with
 
     <build>
@@ -83,7 +98,33 @@ in that so ia have this:
 
 but it fixed and i don't know how
 
+********************************
+**for activating runtime and parallel execution do this:**     
+For IntelliJ IDEA 12+ releases we can build automatically the edited sources if we are using    
+the external compiler option. The only thing needed is to check the option "Build project   
+automatically", located under "Compiler" settings:   
 
-**@Component**   
-//if you want to have this class as component have this annotation
-be careful if you want to scan this by special class add **@ComponentScan** to that class
+![img.png](pics/img.png)
+
+
+Also, if you would like to hot deploy, while the application is running or 
+if you are using spring boot devtools you should enable the compiler.automake.allow.when.app.running from registry too. This will automatically compile your changes.
+
+For versions greater than 2021.2, we need check 'Allow auto-make t o 
+start even id the development application is currently running' option:
+
+![img_1.png](pics/img_1.png)
+
+and 
+
+for old version use this:
+![img_2.png](pics/img_2.png)
+
+
+solution of this in :
+https://stackoverflow.com/questions/12744303/intellij-idea-java-classes-not-auto-compiling-on-save
+
+
+
+
+********************************

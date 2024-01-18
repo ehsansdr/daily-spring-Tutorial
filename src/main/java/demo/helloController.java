@@ -1,8 +1,7 @@
 package demo;
 //if you press ctrl + alt + O : it removes all unused imports
+
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 //@Component//if you want to have this class as component have this annotation
@@ -14,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class helloController {
     @GetMapping("/")//don't forget to have @RestController for activating this method
     public String greet(){
-        System.out.println("\ngreet call");//if someone refresh the tab this statement would execute again
-        return "ddddddd g";
+        System.out.println("\ngreet cal");//if someone refresh the tab this statement would execute again
+        return "helloController in helloController without execution ";
     }
 
 
