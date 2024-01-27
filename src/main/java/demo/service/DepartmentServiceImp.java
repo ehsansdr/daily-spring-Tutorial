@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service//so we can know it has service implementation
 //This annotation is a general-purpose stereotype
@@ -21,7 +22,54 @@ public class DepartmentServiceImp implements DepartmentService{
 
     @Override
     public List<Department> fetchDepartmentList() {
+
         return departmentRepository.findAll();//
+    }
+
+    @Override
+    public Department fetchDepartmentById(Long departmentId) {
+        return this.departmentRepository.findById(departmentId).get();
+    }
+
+    @Override
+    public void deleteDepartmentId(Long departmentId) {
+        this.departmentRepository.deleteById(departmentId);
+    }
+
+    @Override
+    public Department updateDepartment(Long departmentId, Department department) {
+        /**
+         * if you want to update just pass the URL with the path that you declare
+         * in @RestController methods like :http://localhost:8080/departments/4 (4 is {id})
+         *
+         * you can just write the only part that you want to edit in json body
+         * BE CAREFUL URL THAT YOU NEED TO PAST IN PUT PART
+         */
+
+        Department depDb = departmentRepository.findById(departmentId).get();//retuning Department as well ,no need to new
+        //new statement
+        if (Objects.nonNull(department.getDepartmentId2()) &&
+                department.getDepartmentId2() != 0){
+            depDb.setDepartmentName(department.getDepartmentName());
+        }
+
+
+        if (Objects.nonNull(department.getDepartmentName()) &&
+        !"".equalsIgnoreCase(department.getDepartmentName())){
+            depDb.setDepartmentName(department.getDepartmentName());
+        }
+
+        if (Objects.nonNull(department.getDepartmentCode()) &&
+        !"".equalsIgnoreCase(department.getDepartmentCode())){
+            depDb.setDepartmentCode(department.getDepartmentCode());
+        }
+
+        if (Objects.nonNull(department.getDepartmentAddress()) &&
+        !"".equalsIgnoreCase(department.getDepartmentAddress())){
+            depDb.setDepartmentAddress(department.getDepartmentAddress());
+        }
+
+        return departmentRepository.save(depDb);
     }
     //I set Imp at the end of the name so to understand that this is implemented
 }
