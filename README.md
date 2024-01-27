@@ -34,12 +34,12 @@ annotation like @Component
 
 
 * **@RestController** is annotation and if you open that by ctrl+click you see these annotations
-
-@Target(ElementType.TYPE)  
-@Retention(RetentionPolicy.RUNTIME)  
-@Documented   
-@Controller   
-@ResponseBody     
+so you can create rest API
+**@Target(ElementType.TYPE)**  
+**@Retention(RetentionPolicy.RUNTIME)**  
+**@Documented**   
+**@Controller**   
+**@ResponseBody**     
 
 * of curse, we don't see @Component but in last example we said **@Controller** has **@component** so
 by declaring **@RestController** we have its local annotation and ANNOTATION OF ITS LOCAL ANNOTATIONS
@@ -60,6 +60,16 @@ for having GET you can use
 //if you want to have this class as component have this annotation
 be careful if you want to scan this by special class add **@ComponentScan** to that class
 
+**@Entity**
+this annotaion let this class contract with jpa and can contact with database
+
+**@Autowired**
+this attaches to the particular reference
+
+**@RequestBody**    
+Default is true, leading to an exception thrown in case there is nobody content.
+Switch this to false if you prefer null to be passed when the body content is null.
+without this we should to lots of thing manually but with this json object return to department automatically
 
 
 ************************************************************************************************************************
