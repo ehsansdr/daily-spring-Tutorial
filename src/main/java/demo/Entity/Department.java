@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,7 +21,7 @@ public class Department {/**   if you want to change the name that appear to tab
     //filed so:
 
     @Id//to amke primary key we need to annotate this for or field
-    @GeneratedValue(strategy = GenerationType.AUTO)//created
+    @GeneratedValue(strategy = GenerationType.AUTO)//created by itself by order of creation ,and it gets value automatically
     //but you declare entity and for using in database to should have use controller in
     private long departmentId;
     private long departmentId2;

@@ -38,10 +38,15 @@ public class DepartmentController {
 
     @PutMapping("/departments/{id}")//if you want to update s.t be careful to add that id in http
     public Department updateDepartment(@PathVariable("id") Long departmentId,
-                                   @RequestBody Department department){
-
-        return departmentService.updateDepartment(departmentId,department);
-
+                                   @RequestBody Department department) {
+        return departmentService.updateDepartment(departmentId, department);
     }
 
+
+    //finding data by that field that we declare as name in Department
+    //@PathVariable("name") is ecclesial
+    @GetMapping("/departments/name/{name}")
+    public Department fetchDepartmentByName(@PathVariable("name") String departmentName){
+        return this.departmentService.fetchDepartmentByName(departmentName);
+    }
 }

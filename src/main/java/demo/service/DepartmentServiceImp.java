@@ -71,5 +71,20 @@ public class DepartmentServiceImp implements DepartmentService{
 
         return departmentRepository.save(depDb);
     }
+
+    @Override
+    public Department fetchDepartmentByName(String departmentName) {
+        //for finding data by name there is no default method ,so we declare method by key name in spring
+
+        return departmentRepository.findByDepartmentNameIgnoreCase(departmentName);
+
+        //this method has not body, but I think spring will fid it as spatial method
+        /**the formula of the naming method to have that as spatial spring method is (in JpaRepository implement or subclasses):
+         * findBy + (name of field of Department or database object in this class is Department) in camel case
+         * example:
+         * findByDepartmentName
+         */
+
+    }
     //I set Imp at the end of the name so to understand that this is implemented
 }
