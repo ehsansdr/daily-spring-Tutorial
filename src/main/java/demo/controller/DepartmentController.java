@@ -2,6 +2,7 @@ package demo.controller;
 
 import demo.Entity.Department;
 import demo.service.DepartmentService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +15,9 @@ public class DepartmentController {
 
     @PostMapping("/departments")//the name of entity that we use to see in db table
     //not declare here
-    public Department saveDepartment(@RequestBody Department department){
+    public Department saveDepartment(@Valid @RequestBody Department department){
+        //@valid is annotation check and be careful about annotation that we use in
+        //Department like @NotBlank
         return this.departmentService.saveDepartment(department);
     }
 

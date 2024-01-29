@@ -4,9 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
 
 @Getter
 @Setter
@@ -24,7 +25,26 @@ public class Department {/**   if you want to change the name that appear to tab
     @GeneratedValue(strategy = GenerationType.AUTO)//created by itself by order of creation ,and it gets value automatically
     //but you declare entity and for using in database to should have use controller in
     private long departmentId;
+    /*@Positive(message = "the number is not positive")//if you have this the number should be  > 0 else you get bad request
+    //@PositiveOrZero(message = "the number is negative")//if you have this the number should be  >= 0 else you get bad request
+    //@Negative
+    @Positive*/
     private long departmentId2;
+    @NotBlank(message = "information require")//if you don't want s.t not to be blank or empty use this
+    //use this for String fields not for integer
+    //and do some changes in @PostMapping methods because it checks in there
+
+    //@Length(max = 8,min = 2,message = "Length is not allowed")//the length or number of character will check by this
+
+    //@Size(max = 6,min = 2,message = "size is too short")//the length or number of character will check by this
+
+    //@Email(message = "email is not ok")//if you have this and enter data not in Email format you will get bad request
+
+    //@Future
+
+    //@FutureOrPresent
+
+    //@Past
     private String departmentName;
     private String departmentAddress;
     private String departmentCode;
