@@ -1,12 +1,14 @@
 package demo.service;
 
 import demo.Entity.Department;
+import demo.error.DepartmentNotFoundException;
 import demo.reposetory.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service//so we can know it has service implementation
 //This annotation is a general-purpose stereotype
@@ -27,8 +29,20 @@ public class DepartmentServiceImp implements DepartmentService{
     }
 
     @Override
-    public Department fetchDepartmentById(Long departmentId) {
-        return this.departmentRepository.findById(departmentId).get();
+    public Department fetchDepartmentById(Long departmentId) throws DepartmentNotFoundException {
+        //.get return Optional object so you can handle Exception
+        // return this.departmentRepository.findById(departmentId).get();
+
+        //becuase it actually returns optional we can omit get(); and declare it in Optional object
+        Optional<Department> department =  this.departmentRepository.findById(departmentId);
+
+        //so we want to hande exception ,so we can check this Optional object is empty or not
+        if(!department.isPresent()){
+            throw new DepartmentNotFoundException("Department not available");//write the message with entire unuseful error
+        }else {
+            return department.get();
+        }
+
     }
 
     @Override

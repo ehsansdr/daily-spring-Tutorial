@@ -1,6 +1,7 @@
 package demo.controller;
 
 import demo.Entity.Department;
+import demo.error.DepartmentNotFoundException;
 import demo.service.DepartmentService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -41,7 +42,7 @@ public class DepartmentController {
     @GetMapping("/departments/{id}")//to find by id (that we declare that name) the server will use this
     //it is necessary to have @PathVariable("id")
     //because we have @PathVariable("id") before our parameter it is not regular departmentId
-    public Department fetchDepartmentById(@PathVariable("id") Long departmentId){
+    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
         return departmentService.fetchDepartmentById(departmentId);
 
     }
