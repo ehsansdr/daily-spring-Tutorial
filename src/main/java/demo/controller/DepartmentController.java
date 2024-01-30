@@ -3,6 +3,8 @@ package demo.controller;
 import demo.Entity.Department;
 import demo.service.DepartmentService;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,16 +15,26 @@ public class DepartmentController {
     @Autowired//this attaches to the particular reference
     private DepartmentService departmentService;
 
+    //this is for post map and getting info in which you want to get info and esc
+    private final Logger logger = LoggerFactory.getLogger(DepartmentController.class);
+    /** Logger should be from org.slf4j and we have 2 Loggers one of them is class and another is Interface
+     * we need interface */
+
     @PostMapping("/departments")//the name of entity that we use to see in db table
     //not declare here
     public Department saveDepartment(@Valid @RequestBody Department department){
+        //if you have @PostMapping you will see this print line in console if however you ask from server
+        logger.info("Inside saveDepartment of DepartmentController");//you see this in console if you execute this method in last line
         //@valid is annotation check and be careful about annotation that we use in
         //Department like @NotBlank
+        System.out.println("the postMapping asked");//if you search the link in insomnia or web browser
         return this.departmentService.saveDepartment(department);
     }
 
     @GetMapping("/departments")
     public List<Department> fetchDepartmentList(){
+        //if you have @GetMapping you will see this print line in console
+        logger.info("Inside fetchDepartmentList of DepartmentController");//you see this in console if you execute this method in last line
         return this.departmentService.fetchDepartmentList();
     }
 

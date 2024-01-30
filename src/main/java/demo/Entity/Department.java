@@ -5,12 +5,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
 @Getter
 @Setter
+//@NoArgsConstructor//default constructor added
+//@AllArgsConstructor//lombok create all args constructor
 //@ToString
 
 @Entity//this annotaion let this class contract with jpa and can contact with database
@@ -30,10 +34,10 @@ public class Department {/**   if you want to change the name that appear to tab
     //@Negative
     @Positive*/
     private long departmentId2;
-    @NotBlank(message = "information require")//if you don't want s.t not to be blank or empty use this
+    /*@NotBlank(message = "information require")//if you don't want s.t not to be blank or empty use this
     //use this for String fields not for integer
-    //and do some changes in @PostMapping methods because it checks in there
-
+    //and do some changes in @PostMapping methods because it checks in there*/
+    /*
     //@Length(max = 8,min = 2,message = "Length is not allowed")//the length or number of character will check by this
 
     //@Size(max = 6,min = 2,message = "size is too short")//the length or number of character will check by this
@@ -45,6 +49,7 @@ public class Department {/**   if you want to change the name that appear to tab
     //@FutureOrPresent
 
     //@Past
+    */
     private String departmentName;
     private String departmentAddress;
     private String departmentCode;

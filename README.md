@@ -9,7 +9,8 @@ first we created dependencies :
 2. spring boot Devtool
 3. h2                    : for dgl
 4. jpa                   : for data base  (instal plugin : Jakarta EE: Persistence ​(JPA))
-
+5. validation     
+6. lombok                 (but I added it by adding external library .jar) (add <Bulid> <plugings> ... <plugings> <Bulid> part too if you want to add this by dependency)
 
 ************************************************************************************************************************
 use this in application.properties ti change th port:
