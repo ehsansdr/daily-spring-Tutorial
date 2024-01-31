@@ -5,10 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.validator.constraints.Length;
 
 @Getter
@@ -16,6 +13,11 @@ import org.hibernate.validator.constraints.Length;
 //@NoArgsConstructor//default constructor added
 //@AllArgsConstructor//lombok create all args constructor
 //@ToString
+
+@Builder//prepare the builder that we use in DepartmentServiceTest class
+//it used when ho multiple properties available  and you and to use different type properties
+
+
 
 @Entity//this annotaion let this class contract with jpa and can contact with database
 public class Department {/**   if you want to change the name that appear to table change here  */
