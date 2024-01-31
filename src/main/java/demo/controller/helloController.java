@@ -1,6 +1,8 @@
 package demo.controller;
 //if you press ctrl + alt + O : it removes all unused imports
 
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,10 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 //it has @Component so have @ComponentScan in the spring calls that you declare by @SpringBootApplication
 //without @ComponentScan spring can not and would not find this component class
 public class helloController {
+    //if you want to have particular properties from application.properties
+    //use this annotation to inform spring to get that form its source by this annotation and formula
+    @Value("${welcome.message}")//welcome.message declared at application.properties  and has datas
+    private String message;
     @GetMapping("/")//don't forget to have @RestController for activating this method
     public String greet(){
         System.out.println("\ngreet cal");//if someone refresh the tab this statement would execute again
-        return "helloController in helloController without execution ";
+        return message;
     }
 
 

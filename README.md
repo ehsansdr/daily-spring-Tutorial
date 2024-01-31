@@ -11,7 +11,7 @@ first we created dependencies :
 4. jpa                   : for data base  (instal plugin : Jakarta EE: Persistence ​(JPA))
 5. validation     
 6. lombok                 (but I added it by adding external library .jar) (add <Bulid> <plugings> ... <plugings> <Bulid> part too if you want to add this by dependency)
-7. mysql                   (but i write it by myself)
+7. mysql                   (but i write it by myself) [https://spring.io/guides/gs/accessing-data-mysql/](https://spring.io/guides/gs/accessing-data-mysql/)
 ************************************************************************************************************************
 use this in application.properties ti change th port:
 
