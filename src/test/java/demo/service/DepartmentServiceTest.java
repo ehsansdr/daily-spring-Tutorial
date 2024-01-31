@@ -25,7 +25,7 @@ class DepartmentServiceTest {
     //@Before()
     void setUp() {
 
-        Department department = Department.builder().
+        Department department = Department.builder().//be careful about this
                 departmentId2(1).departmentName("a")
                 .departmentAddress("a")
                 .departmentAddress("a")
