@@ -44,7 +44,6 @@ public class DepartmentServiceImp implements DepartmentService{
         }
 
     }
-
     @Override
     public void deleteDepartmentId(Long departmentId) {
         this.departmentRepository.deleteById(departmentId);

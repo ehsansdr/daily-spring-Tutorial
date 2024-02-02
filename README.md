@@ -15,7 +15,11 @@ _after adding by copy pasting press maven icon on top right of pom.xml file to d
 
 ### 5. validation     
 
-### 6. lombok                 (but I added it by adding external library .jar) (add <Bulid> <plugings> ... <plugings> <Bulid> part too if you want to add this by dependency)
+### 6. lombok 
+(but I added it by adding external library .jar)
+(add 
+<Bulid> <plugings> ... <plugings> <Bulid>
+part too if you want to add this by dependency and you can copy past that from pom.xml or start.spring site)
 
 ### 7. mysql                   
 
@@ -24,6 +28,18 @@ _after adding by copy pasting press maven icon on top right of pom.xml file to d
 ##### I use this site to convert the properties to yml format :https://www.javainuse.com/app2yaml
 ##### MAKE SURE YOU DON'T HAVE ANOTHER yml OR .properties FORMAT FILE IT CHANGE THE FILE FORMAT AND THE STRUCTURE
 ##### and you lose your comments when you use that plugin
+     
+### 8. actuator                   
+if you want to monitor your  application    
+or if you want to know how your application performing   
+or if you want to how particular application healthy   
+or what are different beans created    
+or what are different objects created    
+use this dependency    
+
+and  if it works correctly you see this in your console:
+###### Exposing 1 endpoint(s) beneath base path '/actuator'
+and add the path to the end of *localhost:(yourp port)/actuator*   
 
 ************************************************************************************************************************
 use this in application.properties ti change th port:
@@ -103,8 +119,6 @@ without this we should to lots of thing manually but with this json object retur
 
 ###### but be careful about how code forming you should use for them
 
-
-for example:   
 ### **h2 database** 
 in  
 #### **.properties**:
@@ -123,15 +137,17 @@ not
 _No JTA platform available on top of that_   
 search and be careful about site title check this 
 
-**search : http://localhost:(your port)/h2-console**   
 
-###### *be careful about this option that you see*
-Saved Settings: Generic H2 (Server)
-Setting Name:    Generic H2 (Server)
-Driver Class: org.h2.Driver //or maybe base on your codes up here
-JDBC URL:     jdbc:h2:mem:dcbapp
-User Name:   (u t define that)
-Password:    (u t define that)
+
+### **search : http://localhost:(yourPort)/h2-console**   
+
+#### **be careful about this option that you see**
+###### Saved Settings: Generic H2 (Server)    
+###### Setting Name:    Generic H2 (Server)    
+###### Driver Class: org.h2.Driver //or maybe base on your codes up here   
+###### JDBC URL:     jdbc:h2:mem:dcbapp    
+###### User Name:   (u t define that)    
+###### Password:    (u t define that)   
 ************************************************************************************************************************
 
 **problem solution**
