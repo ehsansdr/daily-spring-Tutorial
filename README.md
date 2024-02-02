@@ -1,28 +1,41 @@
-**here we have my journey of learning Spring boot**
+# **here we have my journey of learning Spring boot**
 
 _after adding by copy pasting press maven icon on top right of pom.xml file to download that_
 
 
-first we created dependencies :
+## first we created these dependencies :
 
-1. spring web
-2. spring boot Devtool
-3. h2                    : for dgl
-4. jpa                   : for data base  (instal plugin : Jakarta EE: Persistence ​(JPA))
-5. validation     
-6. lombok                 (but I added it by adding external library .jar) (add <Bulid> <plugings> ... <plugings> <Bulid> part too if you want to add this by dependency)
-7. mysql                   (but i write it by myself) [https://spring.io/guides/gs/accessing-data-mysql/](https://spring.io/guides/gs/accessing-data-mysql/)   
-//"Convert YAML and Properties file" plugin is installed
-//I use this site to convert the properties to yml format :https://www.javainuse.com/app2yaml
-**MAKE SURE YOU DON'T HAVE ANOTHER yml OR .properties FORMAT FILE IT CHANGE THE FILE FORMAT AND THE STRUCTURE**
+### 1. spring web
+
+### 2. spring boot Devtool
+
+### 3. h2                    : for dgl
+
+### 4. jpa                   : for data base  (instal plugin : Jakarta EE: Persistence ​(JPA))
+
+### 5. validation     
+
+### 6. lombok                 (but I added it by adding external library .jar) (add <Bulid> <plugings> ... <plugings> <Bulid> part too if you want to add this by dependency)
+
+### 7. mysql                   
+
+#####  (but i write it by myself) [https://spring.io/guides/gs/accessing-data-mysql/](https://spring.io/guides/gs/accessing-data-mysql/)   
+##### "Convert YAML and Properties file" plugin is installed
+##### I use this site to convert the properties to yml format :https://www.javainuse.com/app2yaml
+##### MAKE SURE YOU DON'T HAVE ANOTHER yml OR .properties FORMAT FILE IT CHANGE THE FILE FORMAT AND THE STRUCTURE
+##### and you lose your comments when you use that plugin
 
 ************************************************************************************************************************
 use this in application.properties ti change th port:
 
     server.port = 800 
+
+if you want to change  the server port in application.yml use this format
+    `server:
+      port: 800`
 ************************************************************************************************************************
 
-**annotations Hint**
+# **annotations Hint**
 
 
 
@@ -32,13 +45,15 @@ use this in application.properties ti change th port:
 * instead of adding **@Component** and below that **@controller**
 you can have only **@controller** 
 because
-in **@controller** annotation class @controller have **@component** and by just adding **@controller** you add its pre-defined
+in **@controller** annotation class **@controller** have **@component** and by just adding **@controller** you add its pre-defined
 annotation like @Component
 
 
 
 
-* **@RestController** is annotation and if you open that by ctrl+click you see these annotations
+### **@RestController**  
+
+is annotation and if you open that by ctrl+click you see these annotations
 so you can create rest API
 **@Target(ElementType.TYPE)**  
 **@Retention(RetentionPolicy.RUNTIME)**  
@@ -53,25 +68,28 @@ by declaring **@RestController** we have its local annotation and ANNOTATION OF 
 
 
 
-* @RequestMapping(value = "/e",method = RequestMethod.GET) is annotation that is used to have Get operation in bakend
-  value = "/(your defined path)" , method = RequestMethod.GET / POST / DELETE / HEAD / PUT / ...
+### **@RequestMapping(value = "/e",method = RequestMethod.GET)**
+is annotation that is used to have Get operation in bakend
+
+####   value = "/(your defined path)" , method = RequestMethod.GET / POST / DELETE / HEAD / PUT / ...
+
 for having GET you can use 
 @GetMapping"/(your defined path)" == @RequestMapping(value = "/e",method = RequestMethod.GET)
 @PostMapping"/(your defined path)" == @RequestMapping(value = "/e",method = RequestMethod.POSt)
 ...    
 
 
-**@Component**   
+### **@Component**   
 //if you want to have this class as component have this annotation
 be careful if you want to scan this by special class add **@ComponentScan** to that class
 
-**@Entity**
+### **@Entity**
 this annotaion let this class contract with jpa and can contact with database
 
-**@Autowired**
+### **@Autowired**
 this attaches to the particular reference
 
-**@RequestBody**    
+### **@RequestBody**    
 Default is true, leading to an exception thrown in case there is nobody content.
 Switch this to false if you prefer null to be passed when the body content is null.
 without this we should to lots of thing manually but with this json object return to department automatically
@@ -117,9 +135,9 @@ but it fixed and i don't know how
 **for activating runtime and parallel execution do this:**     
 For IntelliJ IDEA 12+ releases we can build automatically the edited sources if we are using    
 the external compiler option. The only thing needed is to check the option "Build project   
-automatically", located under "Compiler" settings:   
+automatically", located under "Compiler" settings:
 
-![img.png](pics/img.png)
+<img alt="img.png" height="480" src="pics/img.png" width="720"/>
 
 
 Also, if you would like to hot deploy, while the application is running or 
@@ -128,12 +146,12 @@ if you are using spring boot devtools you should enable the compiler.automake.al
 For versions greater than 2021.2, we need check 'Allow auto-make t o 
 start even id the development application is currently running' option:
 
-![img_1.png](pics/img_1.png)
+<img alt="img_1.png" height="480" src="pics/img_1.png" width="720"/>
 
 and 
 
 for old version use this:
-![img_2.png](pics/img_2.png)
+<img alt="img_2.png" height="480" src="pics/img_2.png" width="720"/>
 
 
 solution of this in :
