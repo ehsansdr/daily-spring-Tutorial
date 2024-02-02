@@ -96,6 +96,43 @@ without this we should to lots of thing manually but with this json object retur
 
 
 ************************************************************************************************************************
+# DATABASE HINT:
+#### you can do your database settings in to format files:
+* ##### .properties
+* ##### .yml
+
+###### but be careful about how code forming you should use for them
+
+
+for example:   
+### **h2 database** 
+in  
+#### **.properties**:
+
+    spring.h2.console.enabled=true
+    spring.datasource.url=jdbc:h2:mem:dcbapp
+    spring.datasource.driverClassName=org.h2.Driver
+    spring.datasource.username=sdr
+    spring.datasource.password=1235
+    spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
+if you see :   
+_Initialized JPA EntityManagerFactory for persistence unit 'default'_   
+it means it created 
+not 
+_No JTA platform available on top of that_   
+search and be careful about site title check this 
+
+**search : http://localhost:(your port)/h2-console**   
+
+###### *be careful about this option that you see*
+Saved Settings: Generic H2 (Server)
+Setting Name:    Generic H2 (Server)
+Driver Class: org.h2.Driver //or maybe base on your codes up here
+JDBC URL:     jdbc:h2:mem:dcbapp
+User Name:   (u t define that)
+Password:    (u t define that)
+************************************************************************************************************************
 
 **problem solution**
 

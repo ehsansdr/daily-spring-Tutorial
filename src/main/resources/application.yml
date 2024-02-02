@@ -11,15 +11,48 @@
 #welcome:
 #  message: hello this is from another file
 
-
-
-
-#h2 data base
 spring:
+  profile:
+    active: dev
+#3 --- is required for separating  profile
+
+---
+#h2 database
+#it checked by insomnia and it was OK
+spring:
+  profile: dev
   datasource:
     driverClassName: org.h2.Driver
     password: 1235
-    url: jdbc:h2:mem:dcbapp
+    url: jdbc:h2:mem:dcbapp-dev
+    username: sdr
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+---
+
+spring:
+  profile: qa
+  datasource:
+    driverClassName: org.h2.Driver
+    password: 1235
+    url: jdbc:h2:mem:dcbapp-qa
+    username: sdr
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+---
+spring:
+  profile: prod
+  datasource:
+    driverClassName: org.h2.Driver
+    password: 1235
+    url: jdbc:h2:mem:dcbapp-prod
     username: sdr
   h2:
     console:
@@ -29,8 +62,9 @@ spring:
 
 
 #my sql database // but it is not working
-
+#---
 #spring:
+#  profile: dev
 #  datasource:
 #    driver-class-name: com.mysql.jdbc.Driver
 #    password: admin
