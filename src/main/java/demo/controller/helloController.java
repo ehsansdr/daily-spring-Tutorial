@@ -13,10 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 //it has @Component so have @ComponentScan in the spring calls that you declare by @SpringBootApplication
 //without @ComponentScan spring can not and would not find this component class
 public class helloController {
+
+
     //if you want to have particular properties from application.properties
     //use this annotation to inform spring to get that form its source by this annotation and formula
-    @Value("${welcome.message}")//welcome.message declared at application.properties  and has datas
+    @Value("${welcome.message}")//welcome.message declared at application.properties  and has data
     private String message;
+
+
     @GetMapping("/")//don't forget to have @RestController for activating this method
     public String greet(){
         System.out.println("\ngreet cal");//if someone refresh the tab this statement would execute again

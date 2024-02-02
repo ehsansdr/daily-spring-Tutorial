@@ -1,0 +1,42 @@
+# INDENT IN SO IMPORTANT ,SPACES AND ENTER
+
+#if you want to change  the server port in application.yml use this format
+#server:
+#  port: 800
+
+# I use this site to convert the properties to yml format :https://www.javainuse.com/app2yaml
+
+
+#this is stored value you can import that by @Value("${welcome.message}") IN .uml
+#welcome:
+#  message: hello this is from another file
+
+
+
+
+#h2 data base
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    password: 1235
+    url: jdbc:h2:mem:dcbapp
+    username: sdr
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+
+#my sql database // but it is not working
+
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    password: admin
+#    url: jdbc:mysql://localhost:3306/dcbapp
+#    username: root
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: true
