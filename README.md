@@ -148,6 +148,65 @@ search and be careful about site title check this
 ###### JDBC URL:     jdbc:h2:mem:dcbapp    
 ###### User Name:   (u t define that)    
 ###### Password:    (u t define that)   
+
+
+
+### **h2 database**
+in
+#### **.yml**:
+
+
+**be careful about incidentals**  
+
+    spring:        
+      profile: qa         
+      datasource:        
+        driverClassName: org.h2.Driver       
+        password: 1235        
+        url: jdbc:h2:mem:dcbapp-qa       
+        username: sdr      
+      h2:      
+        console:     
+          enabled: true      
+      jpa:      
+        database-platform: org.hibernate.dialect.H2Dialect
+
+
+
+### **sql database**
+in
+#### **.properties**:
+
+
+**you can check this link and copy paste the pure code from this link:**    
+#### **https://spring.io/guides/gs/accessing-data-mysql/**
+
+    spring.jpa.hibernate.ddl-auto=update     
+    spring.datasource.url=jdbc:mysql://localhost:3306/dcbapp     
+    spring.datasource.username=root    
+    spring.datasource.password=admin    
+    spring.datasource.driver-class-name=com.mysql.jdbc.Driver 
+
+
+### **sql database**
+in
+#### **.yml**:
+
+    spring:
+      profile: dev
+      datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: admin
+        url: jdbc:mysql://localhost:3306/dcbapp
+        username: root
+      jpa:
+        hibernate:
+          ddl-auto: update
+        show-sql: true
+
+###### but it is not working for me 
+
+
 ************************************************************************************************************************
 
 **problem solution**

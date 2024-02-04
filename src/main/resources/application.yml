@@ -31,8 +31,11 @@ spring:
       enabled: true
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
----
 
+
+---
+#h2 database
+#it checked by insomnia and it was OK
 spring:
   profile: qa
   datasource:
@@ -46,20 +49,42 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
 
----
-spring:
-  profile: prod
-  datasource:
-    driverClassName: org.h2.Driver
-    password: 1235
-    url: jdbc:h2:mem:dcbapp-prod
-    username: sdr
-  h2:
-    console:
-      enabled: true
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-
+#for creating end point use this
+management:
+  endpoint:
+    web:
+      exposure:
+        include: "*"
+#        exclude: qa     if you want to hide from end point do this
+#---
+#
+#spring:
+#  profile: qa
+#  datasource:
+#    driverClassName: org.h2.Driver
+#    password: 1235
+#    url: jdbc:h2:mem:dcbapp-qa
+#    username: sdr
+#  h2:
+#    console:
+#      enabled: true
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#
+#---
+#spring:
+#  profile: prod
+#  datasource:
+#    driverClassName: org.h2.Driver
+#    password: 1235
+#    url: jdbc:h2:mem:dcbapp-prod
+#    username: sdr
+#  h2:
+#    console:
+#      enabled: true
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#
 
 #my sql database // but it is not working
 #---
