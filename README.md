@@ -235,6 +235,25 @@ and refresh maven by top right icon and let intellij to it work and after moment
 you have your perfect spring app 
 
 
+## how to add dependency:
+
+in `pom.xml` alt + insert in widows ot right click and click on generate to have generate frame:
+
+<img alt="img_1.png" src="img_1.png" width="350"/>
+
+chose `add dependency` and find your dependency on the opened part in bottom
+
+and search your dependency there
+
+![img_3.png](img_3.png)
+
+
+then after finding the dependency click add to add your dependency in your `pom.xml`
+
+![img_4.png](img_4.png)
+
+and done!!!
+
 ************************************************************************************************************************
 i had error in my pom.xml file with
 
