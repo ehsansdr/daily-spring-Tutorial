@@ -237,6 +237,8 @@ you have your perfect spring app
 
 ## how to add dependency:
 
+https://www.jetbrains.com/help/idea/spring-support.html
+
 in `pom.xml` alt + insert in widows ot right click and click on generate to have generate frame:
 
 <img alt="img_1.png" src="img_1.png" width="350"/>
