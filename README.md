@@ -209,11 +209,33 @@ in
 
 ************************************************************************************************************************
 
-**problem solution**
+## **problem solution :**
+
+************************************************************************************************************************
+if you want to use plugin of java and it doesn't work check `pom.xml` 
+and in the text find this part (maybe parent part):
+
+    <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.2.1.RELEASE</version>
+    <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+#### and remove `.RELEASE` from `<version>3.2.1.RELEASE</version>` to have this :
+
+    <parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.2.1</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+and refresh maven by top right icon and let intellij to it work and after moment 
+you have your perfect spring app 
 
 
-
-
+************************************************************************************************************************
 i had error in my pom.xml file with
 
     <build>
