@@ -37,6 +37,7 @@ or what are different beans created
 or what are different objects created    
 use this dependency    
 
+### postgresql : (for sql data base i think)
 and  if it works correctly you see this in your console:
 ###### Exposing 1 endpoint(s) beneath base path '/actuator'
 and add the path to the end of *localhost:(yourp port)/actuator*   
