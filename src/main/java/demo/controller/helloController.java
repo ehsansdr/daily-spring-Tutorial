@@ -3,8 +3,7 @@ package demo.controller;
 
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 //@Component//if you want to have this class as component have this annotation
 //be careful if you want to scan this by special class add @ComponentScan to that class
@@ -25,6 +24,12 @@ public class helloController {
     public String greet(){
         System.out.println("\ngreet cal");//if someone refresh the tab this statement would execute again
         return message;
+    }
+
+
+    @DeleteMapping("/d/d/{id}")//don't forget to have @RestController for activating this method
+    public void putMapping(@PathVariable("id") Integer id){
+        System.out.println("\nputMapping cal id : "+ id);//if someone refresh the tab this statement would execute again
     }
 
 

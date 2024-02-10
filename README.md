@@ -106,10 +106,22 @@ this annotaion let this class contract with jpa and can contact with database
 ### **@Autowired**
 this attaches to the particular reference
 
-### **@RequestBody**    
+### **@RequestBody**
 Default is true, leading to an exception thrown in case there is nobody content.
 Switch this to false if you prefer null to be passed when the body content is null.
 without this we should to lots of thing manually but with this json object return to department automatically
+
+
+### **@PathVariable**
+if you want to get some value not in local code text of your local code editor anything else
+and you want to get value from link of http or from for example searching in browser 
+or insomnia or postman you can declare that in the link in  `{}` and your program 
+inform it is special like `"/d/d/{id}"` in this example `d\d\` is not special but 
+becuase we store id in `{id}` we can get the value that search in the link
+ if you want to get put the value in variable in code and program use the before declaring 
+parameter:      
+`public void putMapping(@PathVariable("id") Integer id){`
+and the value as id store in your parameter of method and you can use that
 
 
 ************************************************************************************************************************
@@ -213,7 +225,7 @@ in
 ## **problem solution :**
 
 ************************************************************************************************************************
-if you want to use plugin of java and it doesn't work check `pom.xml` 
+if you want to use plugin of java and it doesn't work check `pom.xml`
 and in the text find this part (maybe parent part):
 
     <parent>
