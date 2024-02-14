@@ -221,6 +221,25 @@ in
 
 
 ************************************************************************************************************************
+### if you want to change the spring banner that appear in console
+
+<img alt="img_5.png" src="img_5.png" width="500"/>
+
+you can create `banner.txt` in `src/main/resources`
+
+<img alt="img_6.png" src="img_6.png" width="400"/>
+
+and paste your pattern
+you can use this site to help yourself to have banner patterns:  
+https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20       
+like this
+
+<img alt="img_7.png" src="img_7.png" width="700"/>
+
+and see your console
+
+<img alt="img_8.png" src="img_8.png" width="600"/>
+************************************************************************************************************************
 
 ## **problem solution :**
 
