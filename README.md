@@ -123,6 +123,63 @@ parameter:
 `public void putMapping(@PathVariable("id") Integer id){`
 and the value as id store in your parameter of method and you can use that
 
+### **@PropertySource** or **@PropertySources**
+sometimes we have extra files as `.properties` or `.yml` but spring just scan `application.yml` or `application.properties`
+but if you want to create your own file in `.properties` or `.yml` but spring WILL NOT scan that you should use annotation to inform
+spring to scan that.For doing that you should use **`@PropertySource`**  **`@PropertySources`** IN RIGHT PLACE
+if you have just one file use **`@PropertySource`** and use this as this way
+
+    @PropertySource("classpath:(filename with right format)")
+or
+    
+    @PropertySource("(filename with right format)")
+
+example:
+
+    @Service
+    @PropertySource("classpath:custome.properties")
+    public class MyFirstService {...
+
+if you have more than one file use **`@PropertySources`** and use this as this way
+
+    @PropertySources({
+    @PropertySource("classpath:(filename with right format)"),
+    @PropertySource("classpath:(filename with right format)")
+    })
+
+**DON'T FORGET `{}`**
+
+example: 
+
+    @Service
+    @PropertySources({
+    @PropertySource("classpath:custome.properties"),
+    @PropertySource("classpath:hhh.properties")
+    })
+    public class MyFirstService {
+
+
+************************************************************************************************************************
+# Spring HINT:
+ if you want to create bean object with java classes :
+
+![img_9.png](img_9.png)
+
+if you want to create bean (spring object) you should do that with using spring application
+so save spring returning in var like this        
+    
+    var springObj = SpringApplication.run(MySpringPluginProjectApplication.class, args);     
+
+and if you want to create object in bean form first add @Component annotation
+or another annotations that has the @Component in them like @Service and @Config
+then use getBean() for that    
+		
+    Customer customer = springObj.getBean(Customer.class);    
+    customer.fff();   
+
+**if you are doing this way and do not have @component you will get Exception**
+
+
 
 ************************************************************************************************************************
 # DATABASE HINT:
