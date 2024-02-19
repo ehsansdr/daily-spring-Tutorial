@@ -1,6 +1,6 @@
 # **here we have my journey of learning Spring boot**
 
-_after adding by copy pasting press maven icon on top right of pom.xml file to download that_
+_after adding by copy and pasting press maven icon on top right of pom.xml file to download that_
 
 
 ## first we created these dependencies :
@@ -11,7 +11,7 @@ _after adding by copy pasting press maven icon on top right of pom.xml file to d
 
 ### 3. h2                    : for dgl
 
-### 4. jpa                   : for data base  (instal plugin : Jakarta EE: Persistence ​(JPA))
+### 4. jpa                   : for data base  (install plugin : Jakarta EE: Persistence ​(JPA))
 
 ### 5. validation     
 
@@ -19,11 +19,11 @@ _after adding by copy pasting press maven icon on top right of pom.xml file to d
 (but I added it by adding external library .jar)
 (add 
 <Bulid> <plugings> ... <plugings> <Bulid>
-part too if you want to add this by dependency and you can copy past that from pom.xml or start.spring site)
+part too if you want to add this by dependency, and you can copy past that from pom.xml or start.spring site)
 
 ### 7. mysql                   
 
-#####  (but i write it by myself) [https://spring.io/guides/gs/accessing-data-mysql/](https://spring.io/guides/gs/accessing-data-mysql/)   
+#####  (but I write it by myself) [https://spring.io/guides/gs/accessing-data-mysql/](https://spring.io/guides/gs/accessing-data-mysql/)   
 ##### "Convert YAML and Properties file" plugin is installed
 ##### I use this site to convert the properties to yml format :https://www.javainuse.com/app2yaml
 ##### MAKE SURE YOU DON'T HAVE ANOTHER yml OR .properties FORMAT FILE IT CHANGE THE FILE FORMAT AND THE STRUCTURE
@@ -40,7 +40,7 @@ use this dependency
 ### postgresql : (for sql data base i think)
 and  if it works correctly you see this in your console:
 ###### Exposing 1 endpoint(s) beneath base path '/actuator'
-and add the path to the end of *localhost:(yourp port)/actuator*   
+and add the path to the end of *localhost:(your port)/actuator*   
 
 ************************************************************************************************************************
 use this in application.properties ti change th port:
@@ -70,7 +70,7 @@ annotation like @Component
 
 ### **@RestController**  
 
-is annotation and if you open that by ctrl+click you see these annotations
+is annotation and if you open that by ctrl+click you see these annotations,
 so you can create rest API
 **@Target(ElementType.TYPE)**  
 **@Retention(RetentionPolicy.RUNTIME)**  
@@ -86,7 +86,7 @@ by declaring **@RestController** we have its local annotation and ANNOTATION OF 
 
 
 ### **@RequestMapping(value = "/e",method = RequestMethod.GET)**
-is annotation that is used to have Get operation in bakend
+is annotation that is used to have Get operation in backend
 
 ####   value = "/(your defined path)" , method = RequestMethod.GET / POST / DELETE / HEAD / PUT / ...
 
@@ -101,7 +101,7 @@ for having GET you can use
 be careful if you want to scan this by special class add **@ComponentScan** to that class
 
 ### **@Entity**
-this annotaion let this class contract with jpa and can contact with database
+this annotation let this class contract with jpa and can contact with database
 
 ### **@Autowired**
 this attaches to the particular reference
@@ -114,18 +114,18 @@ without this we should to lots of thing manually but with this json object retur
 
 ### **@PathVariable**
 if you want to get some value not in local code text of your local code editor anything else
-and you want to get value from link of http or from for example searching in browser 
+,and you want to get value from link of http or from for example searching in browser 
 or insomnia or postman you can declare that in the link in  `{}` and your program 
 inform it is special like `"/d/d/{id}"` in this example `d\d\` is not special but 
 becuase we store id in `{id}` we can get the value that search in the link
  if you want to get put the value in variable in code and program use the before declaring 
 parameter:      
 `public void putMapping(@PathVariable("id") Integer id){`
-and the value as id store in your parameter of method and you can use that
+and the value as id store in your parameter of method ,and you can use that
 
 ### **@PropertySource** or **@PropertySources**
 sometimes we have extra files as `.properties` or `.yml` but spring just scan `application.yml` or `application.properties`
-but if you want to create your own file in `.properties` or `.yml` but spring WILL NOT scan that you should use annotation to inform
+but if you want to create your own file in `src/main/resources` in `.properties` or `.yml` format but spring WILL NOT scan that you should use annotation to inform
 spring to scan that.For doing that you should use **`@PropertySource`**  **`@PropertySources`** IN RIGHT PLACE
 if you have just one file use **`@PropertySource`** and use this as this way
 
@@ -248,7 +248,7 @@ in
 #### **.properties**:
 
 
-**you can check this link and copy paste the pure code from this link:**    
+**you can check this link and copy,paste the pure code from this link:**    
 #### **https://spring.io/guides/gs/accessing-data-mysql/**
 
     spring.jpa.hibernate.ddl-auto=update     
@@ -301,7 +301,7 @@ and see your console
 ## **problem solution :**
 
 ************************************************************************************************************************
-if you want to use plugin of java and it doesn't work check `pom.xml`
+if you want to use plugin of java ,and it doesn't work check `pom.xml`
 and in the text find this part (maybe parent part):
 
     <parent>
@@ -328,7 +328,7 @@ you have your perfect spring app
 
 https://www.jetbrains.com/help/idea/spring-support.html
 
-in `pom.xml` alt + insert in widows ot right click and click on generate to have generate frame:
+in `pom.xml` alt + insert in widows ot right click and click on generate to have generated frame:
 
 <img alt="img_1.png" src="img_1.png" width="350"/>
 
@@ -346,7 +346,7 @@ then after finding the dependency click add to add your dependency in your `pom.
 and done!!!
 
 ************************************************************************************************************************
-i had error in my pom.xml file with
+## I had error in my pom.xml file with
 
     <build>
         <plugins>
@@ -373,10 +373,99 @@ in that so ia have this:
 	    	</plugins>
 	    </build>
 
-but it fixed and i don't know how
+but it fixed and I don't know how
 
 ********************************
-**for activating runtime and parallel execution do this:**     
+## set spring profile in intellij 
+
+### we can to this in 3 ways
+
+
+
+for set profile in spring first create `application-(profile name).properties`
+and in console you see this :     
+
+    No active profile set, falling back to 1 default profile: "default"
+
+**BECAUSE YOU DO NOT SET THAT CREATED PROFILE MANUALLY**     
+
+
+#### **with edit configuration**
+
+go to `run` >> `Edit configuration` >> `Environment Variable` paste this:  
+
+    spring.profiles.active = <your profile name>
+
+like this:
+
+<img alt="img_11.png" src="img_11.png" width="800"/>
+
+
+AND IT IS DONE YOU SET YOUR PROFILE !!!!
+
+
+#### **with file `.properties` or `.yml` **
+go to `application.properties` and paste this :
+
+    spring.profiles.active = (profile name)
+or more than one :
+    
+    spring.profiles.active = (profile name),(profile name),(profile name),...
+
+
+
+your profile can be default and not create as file in `resources`
+
+or you can go to `application.yml` and past this:
+
+    spring:
+        profiles:
+            active: (profile name),(profile name),(profile name),..
+
+### **very important point:** 
+**if you have a bunch of active profile and in all of them or in most of them 
+you have same variable ,and you call that same variable spring would find the latest
+variable in active profile 
+
+for example :
+you create three active profile :**
+
+    spring.profiles.active = dev,test,custom
+
+**and variable `GGG` is in `dev` and `test` in creating active profile the
+order 
+spring first find `dev` and store `GGG` value in `dev` and then if it finds same name 
+variable in `test` it will consider the value of `GGG` of test profile ,and it checks
+next profile `custom` ,and it doesn't have `GGG` so `GGG` of test won't change by latest
+or newest profile**
+
+
+
+#### **with code and method in java classes **
+using method :
+    
+    .setDefaultProperties(Collections.singletonMap("spring.profiles.active","(profile name)"));
+
+I think if you want to active more do that again like (I didn't test this yet):
+
+    .setDefaultProperties(Collections.singletonMap("spring.profiles.active","(profile name)"));
+    .setDefaultProperties(Collections.singletonMap("spring.profiles.active","(profile name)"));
+
+
+like :
+
+    var app = new SpringApplication(MySpringPluginProjectApplication.class);
+    app.setDefaultProperties(Collections.singletonMap("spring.profiles.active","dev"));
+    var springObj = app.run(args);
+
+
+and if you see your console after run you see this line :
+
+     : The following 1 profile is active: "(profile name)",(profile name),...
+
+
+********************************
+## **for activating runtime and parallel execution do this:**     
 For IntelliJ IDEA 12+ releases we can build automatically the edited sources if we are using    
 the external compiler option. The only thing needed is to check the option "Build project   
 automatically", located under "Compiler" settings:
