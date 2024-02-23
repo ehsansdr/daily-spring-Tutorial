@@ -470,7 +470,7 @@ and if you see your console after run you see this line :
 ### you can do this with **Class object** and **record object**    
 both of them have pros and cons
 
-#### With CLASS
+### With CLASS
 **pros:**
 * mutable (you can change the value of them)
 
@@ -511,15 +511,39 @@ if you have set @JsonBody("(name of key and header)") use "(name of key and head
 <img alt="img_15.png" height="300" src="img_15.png"/>
 
     {
-        "customerName": "ehsan",//String type
-        "productName": "iphone",//String type
-        "numberOfProduct": 5    //integer type
+        "customerName": "ehsan",
+        "productName": "iphone",
+        "numberOfProduct": 5    
     }
 
 
 
+### With RECORD:
+
+#### PROS:
+* convenient (don't need to have lots of code like getter and setter and toString)
+
+#### CONS:
+* immutable  (you can't change the value of filed because the filed are final)
 
 
+#### INSTRUCTION:
+create record and declare your field and like object class and have `@RequestBody`
+
+you don't need to have getter and setter and toString in your record,it will do it automatically
+and pass the data in postman or insomnia like this(same ass class object):      
+
+<img alt="img_15.png" height="300" src="img_15.png"/>
+
+![img_17.png](img_17.png)
+
+<img alt="img_18.png" src="img_18.png" width="900"/>
+    
+    {
+    "customerName": "ehsan",
+    "productName": "iphone",
+    "numberOfProduct": 5    
+    }
 
 
 
