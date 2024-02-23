@@ -441,7 +441,7 @@ or newest profile**
 
 
 
-#### **with code and method in java classes **
+#### **with code and method in java classes**
 using method :
     
     .setDefaultProperties(Collections.singletonMap("spring.profiles.active","(profile name)"));
@@ -462,6 +462,65 @@ like :
 and if you see your console after run you see this line :
 
      : The following 1 profile is active: "(profile name)",(profile name),...
+
+
+********************************
+## How to pass and receive data between database and server
+
+### you can do this with **Class object** and **record object**    
+both of them have pros and cons
+
+#### With CLASS
+**pros:**
+* mutable (you can change the value of them)
+
+**cons:**
+* you should add getter and setter method and toString and ... all essential method for your fields if you do not have them   
+in yor class data value won't pass form URL (in postman and insomnia) so make sure have them in your class either codes
+or by Lombok
+
+#### INSTRUCTION:
+create your class declare your filed 
+**make sure you have setter method and toString and ... all essential method for your fields**
+
+if you want to pass data in Body (in postman like here):            
+<img alt="img_12.png" src="img_12.png" width="550"/>
+
+make sure in that method which control that URL and operation have **`@RequestBody`** annotation:
+like :      
+<img alt="img_13.png" src="img_13.png" width="850"/>
+
+so in post man you see this in console    
+
+<img alt="img_14.png" src="img_14.png" width="550"/>
+
+    Transaction[customerName=ehsan, productName=iphone, numberOfProduct=5]
+
+How to pass data in proper format in postman:
+set the type on `JSON`
+betwen `{}`
+write your filed name between `""` and without space type `:` and type your value in right format for string `""`
+and for integer without `""` and don't forget about `,` between the data
+
+make sure you pass correct name in Body 
+use the name of filed exactly
+if you have set @JsonBody("(name of key and header)") use "(name of key and header)" in postman
+
+<img alt="img_16.png" height="350" src="img_16.png"/>
+
+<img alt="img_15.png" height="300" src="img_15.png"/>
+
+    {
+        "customerName": "ehsan",//String type
+        "productName": "iphone",//String type
+        "numberOfProduct": 5    //integer type
+    }
+
+
+
+
+
+
 
 
 ********************************
