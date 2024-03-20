@@ -11,50 +11,50 @@
 #welcome:
 #  message: hello this is from another file
 
-spring:
-  profile:
-    active: dev
-#3 --- is required for separating  profile
-
----
-#h2 database
-#it checked by insomnia and it was OK
-spring:
-  profile: dev
-  datasource:
-    driverClassName: org.h2.Driver
-    password: 1235
-    url: jdbc:h2:mem:dcbapp-dev
-    username: sdr
-  h2:
-    console:
-      enabled: true
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-
-
----
-#h2 database
-#it checked by insomnia and it was OK
-spring:
-  profile: qa
-  datasource:
-    driverClassName: org.h2.Driver
-    password: 1235
-    url: jdbc:h2:mem:dcbapp-qa
-    username: sdr
-  h2:
-    console:
-      enabled: true
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-
-#for creating end point use this
-management:
-  endpoint:
-    web:
-      exposure:
-        include: "*"
+#spring:
+#  profile:
+#    active: dev
+##3 --- is required for separating  profile
+#
+#---
+##h2 database
+##it checked by insomnia and it was OK
+#spring:
+#  profile: dev
+#  datasource:
+#    driverClassName: org.h2.Driver
+#    password: 1235
+#    url: jdbc:h2:mem:dcbapp-dev
+#    username: sdr
+#  h2:
+#    console:
+#      enabled: true
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#
+#
+#---
+##h2 database
+##it checked by insomnia and it was OK
+#spring:
+#  profile: qa
+#  datasource:
+#    driverClassName: org.h2.Driver
+#    password: 1235
+#    url: jdbc:h2:mem:dcbapp-qa
+#    username: sdr
+#  h2:
+#    console:
+#      enabled: true
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#
+##for creating end point use this
+#management:
+#  endpoint:
+#    web:
+#      exposure:
+#        include: "*"
 #        exclude: qa     if you want to hide from end point do this
 #---
 #
@@ -93,7 +93,7 @@ management:
 #  datasource:
 #    driver-class-name: com.mysql.jdbc.Driver
 #    password: admin
-#    url: jdbc:mysql://localhost:3306/dcbapp
+#    url: jdbc:mysql://localhost:3306/dcbapp-dev
 #    username: root
 #  jpa:
 #    hibernate:

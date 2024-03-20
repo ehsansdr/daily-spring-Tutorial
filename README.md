@@ -251,6 +251,12 @@ in
 **you can check this link and copy,paste the pure code from this link:**    
 #### **https://spring.io/guides/gs/accessing-data-mysql/**
 
+how to do mysql in command prompt:    
+#### **https://blog.devart.com/mysql-command-line-client.html**    
+
+the spring git guid:    
+#### **https://github.com/spring-guides/gs-accessing-data-mysql.git**
+
     spring.jpa.hibernate.ddl-auto=update     
     spring.datasource.url=jdbc:mysql://localhost:3306/dcbapp     
     spring.datasource.username=root    
@@ -540,9 +546,9 @@ and pass the data in postman or insomnia like this(same ass class object):
 <img alt="img_18.png" src="img_18.png" width="900"/>
     
     {
-    "customerName": "ehsan",
-    "productName": "iphone",
-    "numberOfProduct": 5    
+        "customerName": "ehsan",
+        "productName": "iphone",
+        "numberOfProduct": 5    
     }
 
 
