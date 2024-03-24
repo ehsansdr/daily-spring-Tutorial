@@ -183,6 +183,81 @@ then use getBean() for that
 
 ************************************************************************************************************************
 # DATABASE HINT:
+
+VERY IMPORTANT
+
+1. first you need to install mysql server and you can install that from above link
+and the tutorial of that in this link too  
+https://www.w3-farsi.com/posts/18452/install-mysql-server/
+
+   
+2. then you should install  MYSQL Administrator :
+   https://www.w3-farsi.com/posts/18452/install-mysql-server/
+
+
+and after that you make sure you have that install base on upper link 
+you can use mysql command prompt 
+(i do not actually know that you can to this by normal command prompt or not)
+
+<img alt="img_19.png" src="img_19.png" width="600"/>
+
+and if you enter any password  and set on that enter that or like mw have no password(blank) and just enter 
+and you will see this
+
+<img alt="img_20.png" src="img_20.png" width="650"/>
+
+if you see this it mean you install and enter currently
+
+
+3. and if you want to create and table and sql statements you can see this link:
+   https://www.w3-farsi.com/posts/18516/create-tables-and-databases-using-mysql-administrator/
+    in mysql command prompt that you install in number 1 hint paste this:     
+   `CREATE DATABASE (name of your database);`     
+   <img alt="img_21.png" src="img_21.png" width="400"/>
+    
+    for pasting better :  `CREATE DATABASE` then type your database name in mysql command prompt   
+    and then type `;`
+    
+    and if you do it correctly you see this:
+    `Query OK, 1 row affected (0.00 sec)`
+
+![img_23.png](img_23.png)
+
+be careful if you want to have statement like adding or dropping table paste this statement
+`USE University;`(be careful you should make sure you have that database)
+and after that you have your statement execute on that database
+
+### of you want better way to have and see you statement do this:
+in intellij we have very spatial plugin name  :    
+<img alt="img_24.png" src="img_24.png" width="400"/>
+
+for learning sql statement see this link:    
+https://www.w3schools.com/mysql/mysql_sql.asp
+
+and you see `DB Browser` on the left I think and you can to lots of work instead in command 
+prompt   
+this + but is to have server connection NOT creating database
+![img_25.png](img_25.png)  
+
+here you can see database of mysql data base   
+![img_26.png](img_26.png)
+if you want to create data base go to mysql command prompt do hint 3 
+and see that in schema and this is your data base and if you
+craeting new data base you refresh that and se that in schemas 
+part
+
+### so the top name is your server not database (`mysql server`)
+### and you see your database in schemas part
+
+### or
+
+using another app like dbeaver to have you database or mysql workbench 
+i prefer dbeaver
+    
+     
+
+
+
 #### you can do your database settings in to format files:
 * ##### .properties
 * ##### .yml
