@@ -236,15 +236,20 @@ https://www.w3schools.com/mysql/mysql_sql.asp
 
 and you see `DB Browser` on the left I think and you can to lots of work instead in command 
 prompt   
-this + but is to have server connection NOT creating database
+this + but is to have server connection NOT creating database     
 ![img_25.png](img_25.png)  
 
-here you can see database of mysql data base   
-![img_26.png](img_26.png)
+here you can see database of mysql database
+
+![img_26.png](img_26.png)      
+
 if you want to create data base go to mysql command prompt do hint 3 
 and see that in schema and this is your data base and if you
 craeting new data base you refresh that and se that in schemas 
 part
+
+by right click on server and press auto-commit you can do better as instanse time
+not saving every time(i think)da
 
 ### so the top name is your server not database (`mysql server`)
 ### and you see your database in schemas part
