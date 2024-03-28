@@ -191,7 +191,7 @@ and the tutorial of that in this link too
 https://www.w3-farsi.com/posts/18452/install-mysql-server/
 
    
-2. then you should install  MYSQL Administrator :
+2. then you should install  MYSQL Administrator :        
    https://www.w3-farsi.com/posts/18452/install-mysql-server/
 
 
@@ -209,8 +209,8 @@ and you will see this
 if you see this it mean you install and enter currently
 
 
-3. and if you want to create and table and sql statements you can see this link:
-   https://www.w3-farsi.com/posts/18516/create-tables-and-databases-using-mysql-administrator/
+3. and if you want to create and table and sql statements you can see this link:             
+   https://www.w3-farsi.com/posts/18516/create-tables-and-databases-using-mysql-administrator/             
     in mysql command prompt that you install in number 1 hint paste this:     
    `CREATE DATABASE (name of your database);`     
    <img alt="img_21.png" src="img_21.png" width="400"/>
@@ -261,11 +261,55 @@ i prefer dbeaver
     
      
 
+### **mysql database**
+in
+#### **.properties**:
+
+
+**you can check this link and copy,paste the pure code from this link:**    
+#### **https://spring.io/guides/gs/accessing-data-mysql/**
+
+how to do mysql in command prompt:    
+#### **https://blog.devart.com/mysql-command-line-client.html**    
+
+the spring git guid:    
+#### **https://github.com/spring-guides/gs-accessing-data-mysql.git**
+
+    spring.jpa.hibernate.ddl-auto=update     
+    spring.datasource.url=jdbc:mysql://localhost:3306/(database or schema name ,not server name)     
+    spring.datasource.username=root    (the user name of ,mysql server ,not database or schema)
+    spring.datasource.password=admin    (the password of ,mysql server ,not database or schema)
+    spring.datasource.driver-class-name=com.mysql.jdbc.Driver 
+
+
+### **mysql database**
+in
+#### **.yml**:
+
+    spring:
+      profile: dev
+      datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: admin
+        url: jdbc:mysql://localhost:3306/dcbapp
+        username: root
+      jpa:
+        hibernate:
+          ddl-auto: update
+        show-sql: true
+
+###### but it is not working for me 
+
 
 
 #### you can do your database settings in to format files:
 * ##### .properties
-* ##### .yml
+* ##### .yml                
+
+
+
+
+
 
 ###### but be careful about how code forming you should use for them
 
@@ -322,45 +366,6 @@ in
         database-platform: org.hibernate.dialect.H2Dialect
 
 
-
-### **sql database**
-in
-#### **.properties**:
-
-
-**you can check this link and copy,paste the pure code from this link:**    
-#### **https://spring.io/guides/gs/accessing-data-mysql/**
-
-how to do mysql in command prompt:    
-#### **https://blog.devart.com/mysql-command-line-client.html**    
-
-the spring git guid:    
-#### **https://github.com/spring-guides/gs-accessing-data-mysql.git**
-
-    spring.jpa.hibernate.ddl-auto=update     
-    spring.datasource.url=jdbc:mysql://localhost:3306/dcbapp     
-    spring.datasource.username=root    
-    spring.datasource.password=admin    
-    spring.datasource.driver-class-name=com.mysql.jdbc.Driver 
-
-
-### **sql database**
-in
-#### **.yml**:
-
-    spring:
-      profile: dev
-      datasource:
-        driver-class-name: com.mysql.jdbc.Driver
-        password: admin
-        url: jdbc:mysql://localhost:3306/dcbapp
-        username: root
-      jpa:
-        hibernate:
-          ddl-auto: update
-        show-sql: true
-
-###### but it is not working for me 
 
 
 ************************************************************************************************************************
